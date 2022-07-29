@@ -9,11 +9,10 @@ import (
 
 func ReadPdfText(path string) (string, error) {
 	f, r, err := pdf.Open(path)
-	// remember close file
-	defer f.Close()
 	if err != nil {
 		return "", err
 	}
+	defer f.Close()
 	var buf bytes.Buffer
 	b, err := r.GetPlainText()
 	if err != nil {
@@ -25,11 +24,10 @@ func ReadPdfText(path string) (string, error) {
 
 func ReadPdf2(path string) (string, error) {
 	f, r, err := pdf.Open(path)
-	// remember close file
-	defer f.Close()
 	if err != nil {
 		return "", err
 	}
+	defer f.Close()
 	totalPage := r.NumPage()
 
 	for pageIndex := 1; pageIndex <= totalPage; pageIndex++ {
