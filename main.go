@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	content, err := utils.ReadPdfText("test_files/0478_s16_pm_21.pdf")
+	content, err := utils.ReadPdfText("test_files/0478_s16_qp_11.pdf")
 	if err != nil {
 		panic(err)
 	}
