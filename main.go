@@ -3,7 +3,6 @@ package main
 import (
 	"os"
 	utils "pdfreader/utils"
-	// "github.com/ledongthuc/pdf"
 )
 
 func main() {
