@@ -11,5 +11,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
 	os.WriteFile("output.txt", []byte(content), 0644)
 }
