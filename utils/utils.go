@@ -3,6 +3,9 @@ package utils
 import (
 	"bytes"
 	"fmt"
+	"io/ioutil"
+	"log"
+	"strings"
 
 	"github.com/ledongthuc/pdf"
 )
@@ -51,4 +54,31 @@ func ReadPdf2(path string) (string, error) {
 
 func IsSameSentence(text pdf.Text, lastTextStyle pdf.Text) bool {
 	return (text.Font == lastTextStyle.Font) && (text.FontSize == lastTextStyle.FontSize) && (text.X == lastTextStyle.X)
+}
+
+func FormatLines(filename string) {
+	input, err := ioutil.ReadFile(filename)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	lines := strings.Split(string(input), "\n")
+
+	for i, line := range lines {
+		if strings.Contains(line, `.`) {
+			lines[i] = strings.Replace(line, `.`, "", -1)
+		}
+	}
+
+	for i, line := range lines {
+		if strings.Contains(line, `[1]`) {
+			lines[i] = strings.Replace(line, `[1]`, "\n\n[1]", -1)
+		}
+	}
+
+	output := strings.Join(lines, "\n")
+	err = ioutil.WriteFile(filename, []byte(output), 0644)
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
