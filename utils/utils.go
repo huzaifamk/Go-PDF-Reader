@@ -12,6 +12,7 @@ import (
 )
 
 func ReadPdfText(path string) (string, error) {
+	
 	f, r, err := pdf.Open(path)
 	if err != nil {
 		return "", err
