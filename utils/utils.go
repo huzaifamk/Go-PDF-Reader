@@ -13,12 +13,23 @@ import (
 
 func ReadPdfText(path string) (string, error) {
 	
+	var buf bytes.Buffer
 	f, r, err := pdf.Open(path)
 	if err != nil {
 		return "", err
 	}
 	defer f.Close()
-	var buf bytes.Buffer
+	p := r.Page(1)
+	var lastTextStyle pdf.Text
+	texts := p.Content().Text
+	for _, text := range texts {
+		if IsSameSentence(text, lastTextStyle) {
+			lastTextStyle.S = lastTextStyle.S + text.S
+		} else {
+			lastTextStyle = text
+			buf.WriteString(text.S)
+		}
+	}
 	b, err := r.GetPlainText()
 	if err != nil {
 		return "", err

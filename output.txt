@@ -1,3 +1,40 @@
+This document consists of 
+13
+ printed pages and 
+3
+ blank pages
+DC (NF/CGW) 119032/4
+© UCLES 2016 
+[Turn over
+Cambridge International Examinations
+Cambridge International General Certificate of Secondary Education
+*COMPUTER SCIENCE
+ 
+0478/11
+Paper 1 Theory 
+May/June 2016
+ 
+1 hour 45 minutes
+Candidates answer on the Question Paper
+No Additional Materials are required
+No calculators allowed
+READ THESE INSTRUCTIONS FIRST
+Write your Centre number, candidate number and name in the spaces at the top of this page
+Write in dark blue or black pen
+You may use an HB pencil for any diagrams, graphs or rough working
+Do not use staples, paper clips, glue or correction fluid
+DO 
+NOT
+ WRITE IN ANY BARCODES
+Answer 
+all
+ questions
+No marks will be awarded for using brand names of software packages or hardware
+At the end of the examination, fasten all your work securely together
+The number of marks is given in brackets [ ] at the end of each question or part question
+The maximum number of marks is 75
+The syllabus is approved for use in England, Wales and Northern Ireland as a Cambridge International Level 1/Level 2 Certificat
+e
 This document consists of 13 printed pages and 3 blank pagesDC (NF/CGW) 119032/4© UCLES 2016 [Turn overCambridge International ExaminationsCambridge International General Certificate of Secondary Education*3507276805*COMPUTER SCIENCE 0478/11Paper 1 Theory May/June 2016 1 hour 45 minutesCandidates answer on the Question PaperNo Additional Materials are requiredNo calculators allowedREAD THESE INSTRUCTIONS FIRSTWrite your Centre number, candidate number and name in the spaces at the top of this pageWrite in dark blue or black penYou may use an HB pencil for any diagrams, graphs or rough workingDo not use staples, paper clips, glue or correction fluidDO NOT WRITE IN ANY BARCODESAnswer all questionsNo marks will be awarded for using brand names of software packages or hardwareAt the end of the examination, fasten all your work securely togetherThe number of marks is given in brackets [ ] at the end of each question or part questionThe maximum number of marks is 75The syllabus is approved for use in England, Wales and Northern Ireland as a Cambridge International Level 1/Level 2 Certificate20478/11/M/J/16© UCLES 20161 Some software can be described as free, freeware or shareware Tick (✓) the appropriate boxes in the table below to show which features apply to these three types of softwareSoftware featureFreeFreewareSharewareSoftware source code can be freely accessed and modified as requiredAll the features of the full version of the software are not made available; the full version needs to be 
 purchased firstThe original software is subject to all copyright lawsIt is possible to distribute modified versions or copies of the software to friends and family[3]2 Hexadecimal codes are used in MAC addresses 
 
