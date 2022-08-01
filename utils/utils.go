@@ -30,13 +30,20 @@ func ReadPdfText(path string) (string, error) {
 			buf.WriteString(text.S)
 		}
 	}
-	b, err := r.GetPlainText()
+
+	totalPages := r.NumPage()
+	for pageIndex := 2; pageIndex <= totalPages; pageIndex++ {
+		p := r.Page(pageIndex)
+		if p.V.IsNull() {
+			continue
+		}
+	b := p.Content().Text
 	if err != nil {
 		return "", err
 	}
-	buf.ReadFrom(b)
+	// buf.ReadFrom(b)}
 	return buf.String(), nil
-}
+}}
 
 func ReadPdfTextWithFormatting(path string) (string, error) {
 	var buf bytes.Buffer
