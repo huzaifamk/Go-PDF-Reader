@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/ledongthuc/pdf"
@@ -25,7 +26,8 @@ func ReadPdfText(path string) (string, error) {
 	return buf.String(), nil
 }
 
-func ReadPdf2(path string) (string, error) {
+func ReadPdfTextWithFormatting(path string) (string, error) {
+	var buf bytes.Buffer
 	f, r, err := pdf.Open(path)
 	if err != nil {
 		return "", err
@@ -44,12 +46,14 @@ func ReadPdf2(path string) (string, error) {
 			if IsSameSentence(text, lastTextStyle) {
 				lastTextStyle.S = lastTextStyle.S + text.S
 			} else {
-				fmt.Printf("Font: %s, Font-size: %f, x: %f, y: %f, content: %s \n", lastTextStyle.Font, lastTextStyle.FontSize, lastTextStyle.X, lastTextStyle.Y, lastTextStyle.S)
+				fmt.Print(lastTextStyle.S)
+				os.WriteFile("output.txt", []byte(lastTextStyle.S), 0644)
 				lastTextStyle = text
+				buf.WriteString(text.S)
 			}
 		}
 	}
-	return "", nil
+	return buf.String(), nil
 }
 
 func IsSameSentence(text pdf.Text, lastTextStyle pdf.Text) bool {
@@ -69,16 +73,42 @@ func FormatLines(filename string) {
 			lines[i] = strings.Replace(line, `.`, "", -1)
 		}
 	}
-
 	for i, line := range lines {
-		if strings.Contains(line, `[1]`) {
-			lines[i] = strings.Replace(line, `[1]`, "\n\n[1]", -1)
+		if strings.Contains(line, `(a)`) {
+			lines[i] = strings.Replace(line, `(a)`, "\n\n(a)", -1)
+		}
+
+		output := strings.Join(lines, "\n")
+		err = ioutil.WriteFile(filename, []byte(output), 0644)
+		if err != nil {
+			log.Fatalln(err)
 		}
 	}
+}
 
-	output := strings.Join(lines, "\n")
-	err = ioutil.WriteFile(filename, []byte(output), 0644)
+func ReadPdfRow(path string) (string, error) {
+	f, r, err := pdf.Open(path)
+	defer func() {
+		_ = f.Close()
+	}()
 	if err != nil {
-		log.Fatalln(err)
+		return "", err
 	}
+	totalPage := r.NumPage()
+
+	for pageIndex := 1; pageIndex <= totalPage; pageIndex++ {
+		p := r.Page(pageIndex)
+		if p.V.IsNull() {
+			continue
+		}
+
+		rows, _ := p.GetTextByRow()
+		for _, row := range rows {
+			println(">>>> row: ", row.Position)
+			for _, word := range row.Content {
+				fmt.Println(word.S)
+			}
+		}
+	}
+	return "", nil
 }
