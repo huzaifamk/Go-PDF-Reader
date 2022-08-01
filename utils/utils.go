@@ -37,13 +37,13 @@ func ReadPdfText(path string) (string, error) {
 		if p.V.IsNull() {
 			continue
 		}
-	b := p.Content().Text
+	b, err := r.GetPlainText()
 	if err != nil {
 		return "", err
 	}
-	// buf.ReadFrom(b)}
+	buf.ReadFrom(b)}
 	return buf.String(), nil
-}}
+}
 
 func ReadPdfTextWithFormatting(path string) (string, error) {
 	var buf bytes.Buffer
