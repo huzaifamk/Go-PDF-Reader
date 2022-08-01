@@ -31,11 +31,11 @@ func ReadPdfText(path string) (string, error) {
 		}
 	}
 
-	b, err := r.GetPlainText()
-	if err != nil {
-		return "", err
-	}
-	buf.ReadFrom(b)
+	// b, err := r.GetPlainText()
+	// if err != nil {
+	// 	return "", err
+	// }
+	// buf.ReadFrom(b)
 	return buf.String(), nil
 }
 
