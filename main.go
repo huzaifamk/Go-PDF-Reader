@@ -17,8 +17,8 @@ func main() {
 	// 	panic(err)
 	// }
 
-		content, err := utils.ReadPdfRow("test_files/0478_s16_qp_11.pdf")
-		if err != nil {
+	content, err := utils.ReadPdfRow("test_files/0478_s16_qp_11.pdf")
+	if err != nil {
 		panic(err)
 	}
 
