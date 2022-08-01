@@ -31,17 +31,11 @@ func ReadPdfText(path string) (string, error) {
 		}
 	}
 
-	totalPages := r.NumPage()
-	for pageIndex := 2; pageIndex <= totalPages; pageIndex++ {
-		p := r.Page(pageIndex)
-		if p.V.IsNull() {
-			continue
-		}
 	b, err := r.GetPlainText()
 	if err != nil {
 		return "", err
 	}
-	buf.ReadFrom(b)}
+	buf.ReadFrom(b)
 	return buf.String(), nil
 }
 
@@ -123,7 +117,7 @@ func ReadPdfRow(path string) (string, error) {
 
 		rows, _ := p.GetTextByRow()
 		for _, row := range rows {
-			println(">>>> row: ", row.Position)
+			// println(">>>> row: ", row.Position)
 			for _, word := range row.Content {
 				fmt.Println(word.S)
 			}
