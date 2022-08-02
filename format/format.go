@@ -12,6 +12,27 @@ func IsSameSentence(text pdf.Text, lastTextStyle pdf.Text) bool {
 	return (text.Font == lastTextStyle.Font) && (text.FontSize == lastTextStyle.FontSize) && (text.X == lastTextStyle.X)
 }
 
+func UpdateOutput(filename string) {
+	input, err := ioutil.ReadFile(filename)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	lines := strings.Split(string(input), "\n")
+
+	for i, line := range lines {
+		if strings.Contains(line, `.`) {
+			lines[i] = strings.Replace(line, `.`, "", -1)
+		}
+	}
+
+	output := strings.Join(lines, "\n")
+	err = ioutil.WriteFile(filename, []byte(output), 0644)
+	if err != nil {
+		log.Fatalln(err)
+	}
+}
+
 func FormatLines(filename string) {
 	input, err := ioutil.ReadFile(filename)
 	if err != nil {
@@ -78,36 +99,36 @@ func FormatLines(filename string) {
 			lines[i] = strings.Replace(line, `(f)`, "\n\n(f)", -1)
 		}
 	}
-	for i, line := range lines {
-		if strings.Contains(line, `[1]`) {
-			lines[i] = strings.Replace(line, `[1]`, "\n\n[1]", -1)
-		}
-	}
-	for i, line := range lines {
-		if strings.Contains(line, `[2]`) {
-			lines[i] = strings.Replace(line, `[2]`, "\n\n[2]", -1)
-		}
-	}
-	for i, line := range lines {
-		if strings.Contains(line, `[3]`) {
-			lines[i] = strings.Replace(line, `[3]`, "\n\n[3]", -1)
-		}
-	}
-	for i, line := range lines {
-		if strings.Contains(line, `[4]`) {
-			lines[i] = strings.Replace(line, `[4]`, "\n\n[4]", -1)
-		}
-	}
-	for i, line := range lines {
-		if strings.Contains(line, `[5]`) {
-			lines[i] = strings.Replace(line, `[5]`, "\n\n[5]", -1)
-		}
-	}
-	for i, line := range lines {
-		if strings.Contains(line, `[6]`) {
-			lines[i] = strings.Replace(line, `[6]`, "\n\n[6]", -1)
-		}
-	}
+	// for i, line := range lines {
+	// 	if strings.Contains(line, `[1]`) {
+	// 		lines[i] = strings.Replace(line, `[1]`, "\n\n[1]", -1)
+	// 	}
+	// }
+	// for i, line := range lines {
+	// 	if strings.Contains(line, `[2]`) {
+	// 		lines[i] = strings.Replace(line, `[2]`, "\n\n[2]", -1)
+	// 	}
+	// }
+	// for i, line := range lines {
+	// 	if strings.Contains(line, `[3]`) {
+	// 		lines[i] = strings.Replace(line, `[3]`, "\n\n[3]", -1)
+	// 	}
+	// }
+	// for i, line := range lines {
+	// 	if strings.Contains(line, `[4]`) {
+	// 		lines[i] = strings.Replace(line, `[4]`, "\n\n[4]", -1)
+	// 	}
+	// }
+	// for i, line := range lines {
+	// 	if strings.Contains(line, `[5]`) {
+	// 		lines[i] = strings.Replace(line, `[5]`, "\n\n[5]", -1)
+	// 	}
+	// }
+	// for i, line := range lines {
+	// 	if strings.Contains(line, `[6]`) {
+	// 		lines[i] = strings.Replace(line, `[6]`, "\n\n[6]", -1)
+	// 	}
+	// }
 
 	output := strings.Join(lines, "\n")
 	err = ioutil.WriteFile(filename, []byte(output), 0644)

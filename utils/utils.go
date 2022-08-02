@@ -25,6 +25,8 @@ func ReadPdfText(path string) (string, error) {
 		var TextContent pdf.Text
 		texts := p.Content().Text
 
+		buf.WriteString(fmt.Sprintf("\n**Page %d**\n\n", pageIndex))
+
 		for _, text := range texts {
 
 			if format.IsSameSentence(text, TextContent) {
@@ -35,11 +37,6 @@ func ReadPdfText(path string) (string, error) {
 			}
 		}
 	}
-	// b, err := r.GetPlainText()
-	// if err != nil {
-	// 	return "", err
-	// }
-	// buf.ReadFrom(b)
 	return buf.String(), nil
 }
 

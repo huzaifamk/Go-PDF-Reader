@@ -1,11 +1,14 @@
+
+**Page 1**
+
 This document consists of 
-
-
-
-
-
-
-
+13
+ printed pages and 
+3
+ blank pages
+DC (NF/CGW) 119032/4
+© UCLES 2016 
+[Turn over
 Cambridge International Examinations
 Cambridge International General Certificate of Secondary Education
 *COMPUTER SCIENCE
@@ -35,6 +38,9 @@ The number of marks is given in brackets [ ] at the end of each question or part
 The maximum number of marks is 75
 The syllabus is approved for use in England, Wales and Northern Ireland as a Cambridge International Level 1/Level 2 Certificat
 e
+
+**Page 2**
+
 20478/11/M/J/16© UCLES 20161 Some software can be described as free, freeware or shareware
  Tick (
 ✓) the appropriate boxes in the table below to show which features apply to these three 
@@ -46,20 +52,12 @@ are not made available; the full version needs to be
 purchased firstThe original software is subject to all copyright laws
 It is possible to distribute modified versions or 
 copies of the software to friends and family
-
-
 [3]2 Hexadecimal codes are used in MAC addresses
- 
-
-(a) 
+ (a) 
 State what is meant by the term MAC
  
-
-
 [1]
- 
-
-(b) 
+ (b) 
 Explain what the hexadecimal code in a MAC address represents
  
  
@@ -67,13 +65,12 @@ Explain what the hexadecimal code in a MAC address represents
  
  
  
-
-
 [3]
-30478/11/M/J/16© UCLES 2016[Turn over
-3 
 
-(a) Five sensors and five applications are shown below
+**Page 3**
+
+30478/11/M/J/16© UCLES 2016[Turn over
+3 (a) Five sensors and five applications are shown below
   Draw a line to link each sensor to its most appropriate application
  Sensor Application
 Light sensorMonitor the pollution levels in a river
@@ -84,11 +81,7 @@ pH sensorMonitor the amount of water left in
 clothes in a dryer
 Pressure sensorMonitor acidity levels in the soil in a 
 greenhouse
-
-
-[4] 
-
-(b) 
+[4] (b) 
 Automatic doors in a building are controlled by the use of infrared sensors and a 
 microprocessor
   Describe how the sensors and the microprocessor are used to automatically open a door as 
@@ -101,18 +94,15 @@ a person approaches
  
  
  
-
-
 [4]
-40478/11/M/J/16© UCLES 20164 
 
-(a) Nikita wishes to print out some documents and connects her printer to the computer using 
+**Page 4**
+
+40478/11/M/J/16© UCLES 20164 (a) Nikita wishes to print out some documents and connects her printer to the computer using 
 one of the USB ports
   (i) 
 Identify what type of data transmission is being used
  
-
-
 [1]
   (ii) 
 Give 
@@ -123,19 +113,13 @@ three reasons for using a USB port
  
 3  
  
- 
-
-[3]  (iii) 
+ [3]  (iii) 
 The printer runs out of paper while it is printing the documents A signal is sent to the 
 processor to request that the problem is dealt with
    
 Name this type of signal 
-
-
 [1]
- 
-
-(b) 
+ (b) 
 State one suitable application for 
 each
  printer below A different application must be given for 
@@ -144,17 +128,14 @@ Inkjet printer
  
 3D printer  
  
- 
+ [2]
+**Page 5**
 
-[2]50478/11/M/J/16© UCLES 2016[Turn over
- 
-
-(c) 
+50478/11/M/J/16© UCLES 2016[Turn over
+ (c) 
 Name another type of printer and describe 
 one way in which it is different from the printers 
-named in part 
-
-(b)
+named in part (b)
   Give an application for this printer 
 Type of printer  
 Description  
@@ -162,9 +143,10 @@ Description
  
 Application  
  
+[3]
+**Page 6**
 
-
-[3]6
+6
 0478/11/M/J/16
 © UCLES 2016
 5 
@@ -196,40 +178,29 @@ X
 thickness is in tolerance AND (roller speed <> 10 metres/second OR temperature >= 50 °C)
 OR
 roller speed = 10 metres/second AND temperature >= 50 °C
- 
-
-(a) 
+ (a) 
 Draw a logic circuit to represent the above monitoring system
 D
 S
 X
 T
-
-
 [6]
-70478/11/M/J/16© UCLES 2016[Turn over
- 
 
-(b) 
+**Page 7**
+
+70478/11/M/J/16© UCLES 2016[Turn over
+ (b) 
 Complete the truth table for the monitoring system
 DST
 Working Space
-X000001010011100101110111
-
-[4]6 Secure socket layer (SSL) is used in the security of information on Internet websites
- 
-
-(a) 
+X000001010011100101110111[4]6 Secure socket layer (SSL) is used in the security of information on Internet websites
+ (a) 
 State how it is possible for a user to know that a website is secure by looking at the web 
 address
  
  
-
-
 [1]
- 
-
-(b) 
+ (b) 
 Describe 
 three of the stages a web browser goes through to detect whether a website is 
 secure
@@ -242,9 +213,10 @@ secure
 3  
  
  
+[3]
+**Page 8**
 
-
-[3]8
+8
 0478/11/M/J/16
 © UCLES 2016
 7 
@@ -263,26 +235,21 @@ C:
 1100
 8421
 0:
- 
-
-(a) 
+ (a) 
 Show how the 4-bit registers would store the remaining two characters, 3 and 5
 3
 5
-
-
 [2]
- 
-
-(b) 
+ (b) 
 Identify which seat is stored in the following 4-bit registers
 1110
 0100
 1001
 0001
-
-
 [2]
+
+**Page 9**
+
 90478/11/M/J/16© UCLES 2016[Turn over
 8 A bank offers an online service to its customers The bank has developed a “
 SafeToUse
@@ -295,37 +262,30 @@ nd character
   5th character
   6th character
   8th character
- 
-
-(a) (i) 
+ (a) (i) 
 Explain why it is more secure to use drop-down boxes rather than entering characters 
 using a keyboard
  
  
  
  
-
-
 [2]
   (ii) 
 Give a reason why the system asks for four characters chosen at random
  
  
-
-
 [1]
- 
-
-(b) 
+ (b) 
 Biometrics is an additional form of security
   Give 
 two
  examples of biometrics
 1  
 2  
+[2]
+**Page 10**
 
-
-[2]100478/11/M/J/16© UCLES 20169 Check digits are used to ensure the accuracy of entered data
+100478/11/M/J/16© UCLES 20169 Check digits are used to ensure the accuracy of entered data
  A 7-digit number has an extra digit on the right, called the check digit
 digit position:12345678digit:––––––––  check digit
  The check digit is calculated as follows:
@@ -333,19 +293,13 @@ digit position:12345678digit:––––––––  check digit
 � the seven results are then added together
 � this total is divided by 11
 � the remainder gives the check digit (if the remainder = 10, the check digit is X)
- 
-
-(a) 
+ (a) 
 Calculate the check digit for the following number Show all your working
 4      2      4      1      5      0      8      … 
  
  
 Check digit  
-
-
-[2] 
-
-(b) 
+[2] (b) 
 An operator has just 
 keyed in the following number:
 3      2      4      0      0      4      5      X  Circle below 
@@ -356,9 +310,10 @@ correct            incorrect  Explain your answer
  
  
  
+[3]
+**Page 11**
 
-
-[3]110478/11/M/J/16© UCLES 2016[Turn over
+110478/11/M/J/16© UCLES 2016[Turn over
 10 Six security issues and 
 six descriptions are shown below
  Draw a line to link each security issue to its correct description
@@ -390,11 +345,10 @@ Pharming
 PhishingViruses
 Hacking
 Spyware
-Cookies
+Cookies[5]
+**Page 12**
 
-[5]120478/11/M/J/16© UCLES 201611 
-
-(a) Four examples of optical storage media are:
+120478/11/M/J/16© UCLES 201611 (a) Four examples of optical storage media are:
 � DVD-RW
 � DVD-RAM
 � CD-ROM
@@ -410,11 +364,7 @@ Blue laser used to read/ write dataRed laser used to read/ write dataDVD-RW
 DVD-RAM
 CD-ROM
 Blu-ray disc
-
-
-[4] 
-
-(b) 
+[4] (b) 
 Solid state drives (SSD) are replacing hard disc drives (HDD) in some computers
   (i) 
 Give 
@@ -425,8 +375,6 @@ three reasons why this is happening
  
 3  
  
-
-
 [3]  (ii) 
 Explain why many web servers still use hard disc drive (HDD) technology
  
@@ -434,37 +382,24 @@ Explain why many web servers still use hard disc drive (HDD) technology
  
  
  
-
-
 [2]
-130478/11/M/J/16© UCLES 201612 
 
-(a) Name the following type of barcode:
+**Page 13**
+
+130478/11/M/J/16© UCLES 201612 (a) Name the following type of barcode:
  
-
-
 [1]
- 
-
-(b) 
-The barcode in part 
-
-(a)
+ (b) 
+The barcode in part (a)
  contains the denary value   
 2 6 4 0  Convert this value to hexadecimal
  
  
   Write the value as a 12-bit binary number
-
-
-[4] 
-
-(c) 
+[4] (c) 
 An airport uses the type of
  barcode shown in 
-part 
-
-(a)
+part (a)
  to advertise local places of interest
   Describe how a visitor landing at the airport could use these barcodes to help plan their visit
  
@@ -474,11 +409,18 @@ part
  
  
  
-
-
 [3]
+
+**Page 14**
+
 140478/11/M/J/16© UCLES 2016BLANK PAGE
+
+**Page 15**
+
 150478/11/M/J/16© UCLES 2016BLANK PAGE
+
+**Page 16**
+
 160478/11/M/J/16© UCLES 2016Permission to reproduce items where third-party owned material protected by copyright is included has been sought and cleared w
 here possible Every reasonable 
 effort has been made by the publisher (UCLES) to trace copyright holders, but if any items requiring clearance have unwittingly
