@@ -81,4 +81,22 @@ func ReadPdfRow(path string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	totalPage
+	totalPage := r.NumPage()
+
+	for pageIndex := 1; pageIndex <= totalPage; pageIndex++ {
+		p := r.Page(pageIndex)
+		if p.V.IsNull() {
+			continue
+		}
+
+		rows, _ := p.GetTextByRow()
+		for _, row := range rows {
+			// println(">>>> row: ", row.Position)
+			for _, word := range row.Content {
+				fmt.Println(word.S)
+			}
+		}
+	}
+	return "", nil
+}
+
