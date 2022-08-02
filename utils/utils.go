@@ -129,8 +129,30 @@ func ReadPdfTextWithFormattingWithRow(path string) (string, error) {
 
 
 func ReadPdfTextWithFormattingWithRowAndPage(path string) (string, error) {
-	
+	var buf bytes.Buffer
+	f, r, err := pdf.Open(path)
+	if err != nil {
+		return "", err
+	}
+	defer f.Close()
+	totalPage := r.NumPage()
 
+	for pageIndex := 1; pageIndex <= totalPage; pageIndex++ {
+		p := r.Page(pageIndex)
+		if p.V.IsNull() {
+			continue
+		}
+		rows, _ := p.GetTextByRow()
+		for _, row := range rows {
+			// println(">>>> row: ", row.Position)
+			for _, word := range row.Content {
+				fmt.Println(word.S)
+				buf.WriteString(word.S)
+			}
+		}
+	}
+	return buf.String(), nil
+}
 
 
 
