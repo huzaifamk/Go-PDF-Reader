@@ -147,9 +147,6 @@ func ReadPdfTextWithFormattingWithRowAndPage(path string) (string, error) {
 			// println(">>>> row: ", row.Position)
 			for _, word := range row.Content {
 				fmt.Println(word.S)
-				buf.WriteString(word.S)
-			}
-		}
-	}
+				buf.W
 	return buf.String(), nil
 }
