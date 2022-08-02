@@ -12,25 +12,31 @@ import (
 )
 
 func ReadPdfText(path string) (string, error) {
-	
+
 	var buf bytes.Buffer
 	f, r, err := pdf.Open(path)
 	if err != nil {
 		return "", err
 	}
 	defer f.Close()
-	p := r.Page(1)
-	var lastTextStyle pdf.Text
-	texts := p.Content().Text
-	for _, text := range texts {
-		if IsSameSentence(text, lastTextStyle) {
-			lastTextStyle.S = lastTextStyle.S + text.S
-		} else {
-			lastTextStyle = text
-			buf.WriteString(text.S)
+	totalPage := r.NumPage()
+
+	for pageIndex := 1; pageIndex <= totalPage; pageIndex++ {
+
+		p := r.Page(pageIndex)
+		var TextContent pdf.Text
+		texts := p.Content().Text
+
+		for _, text := range texts {
+
+			if IsSameSentence(text, TextContent) {
+				TextContent.S = TextContent.S + text.S
+			} else {
+				TextContent = text
+				buf.WriteString(text.S)
+			}
 		}
 	}
-
 	// b, err := r.GetPlainText()
 	// if err != nil {
 	// 	return "", err
@@ -68,7 +74,6 @@ func ReadPdfTextWithFormatting(path string) (string, error) {
 	}
 	return buf.String(), nil
 }
-
 
 func ReadPdfRow(path string) (string, error) {
 	f, r, err := pdf.Open(path)
@@ -108,6 +113,34 @@ func FormatLines(filename string) {
 	}
 
 	lines := strings.Split(string(input), "\n")
+
+	for _, line := range lines {
+		lines[1] = strings.Split(line, "\n")[0]
+	}
+	for _, line := range lines {
+		lines[2] = strings.Split(line, "\n")[0]
+	}
+	for _, line := range lines {
+		lines[3] = strings.Split(line, "\n")[0]
+	}
+	for _, line := range lines {
+		lines[4] = strings.Split(line, "\n")[0]
+	}
+	for _, line := range lines {
+		lines[5] = strings.Split(line, "\n")[0]
+	}
+	for _, line := range lines {
+		lines[6] = strings.Split(line, "\n")[0]
+	}
+	for _, line := range lines {
+		lines[7] = strings.Split(line, "\n")[0]
+	}
+
+	// for i := 1; i <= 8; i++ {
+	// 	for i, line := range lines {
+	// 		lines[i] = strings.Split(line, "\n")[0]
+	// 	}
+	// }
 
 	for i, line := range lines {
 		if strings.Contains(line, `.`) {
@@ -170,9 +203,9 @@ func FormatLines(filename string) {
 		}
 	}
 
-		output := strings.Join(lines, "\n")
-		err = ioutil.WriteFile(filename, []byte(output), 0644)
-		if err != nil {
-			log.Fatalln(err)
-		}
+	output := strings.Join(lines, "\n")
+	err = ioutil.WriteFile(filename, []byte(output), 0644)
+	if err != nil {
+		log.Fatalln(err)
 	}
+}
