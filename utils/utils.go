@@ -128,6 +128,9 @@ func ReadPdfTextWithFormattingWithRow(path string) (string, error) {
 }
 
 
+func ReadPdfTextWithFormattingWithRowAndPage(path string) (string, error) {
+	
+
 
 
 
