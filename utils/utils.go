@@ -93,7 +93,4 @@ func ReadPdfRow(path string) (string, error) {
 		for _, row := range rows {
 			// println(">>>> row: ", row.Position)
 			for _, word := range row.Content {
-				fmt.Println(word.S)
-			}
-		}
-	}
+	
