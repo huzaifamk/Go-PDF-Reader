@@ -97,5 +97,3 @@ func ReadPdfRow(path string) (string, error) {
 			}
 		}
 	}
-	return "", nil
-}
