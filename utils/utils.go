@@ -153,4 +153,3 @@ func ReadPdfTextWithFormattingWithRowAndPage(path string) (string, error) {
 	}
 	return buf.String(), nil
 }
-
