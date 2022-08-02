@@ -88,6 +88,3 @@ func ReadPdfRow(path string) (string, error) {
 		if p.V.IsNull() {
 			continue
 		}
-
-		rows, _ := p.GetTextByRow()
-		fmt.Printf("", var)
