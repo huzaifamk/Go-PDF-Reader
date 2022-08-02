@@ -3,39 +3,43 @@ package utils
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
-	"log"
 	"os"
-	"strings"
+	"pdfreader/format"
 
 	"github.com/ledongthuc/pdf"
 )
 
 func ReadPdfText(path string) (string, error) {
-	
+
 	var buf bytes.Buffer
 	f, r, err := pdf.Open(path)
 	if err != nil {
 		return "", err
 	}
 	defer f.Close()
-	p := r.Page(1)
-	var lastTextStyle pdf.Text
-	texts := p.Content().Text
-	for _, text := range texts {
-		if IsSameSentence(text, lastTextStyle) {
-			lastTextStyle.S = lastTextStyle.S + text.S
-		} else {
-			lastTextStyle = text
-			buf.WriteString(text.S)
+	totalPage := r.NumPage()
+
+	for pageIndex := 1; pageIndex <= totalPage; pageIndex++ {
+
+		p := r.Page(pageIndex)
+		var TextContent pdf.Text
+		texts := p.Content().Text
+
+		for _, text := range texts {
+
+			if format.IsSameSentence(text, TextContent) {
+				TextContent.S = TextContent.S + text.S
+			} else {
+				TextContent = text
+				buf.WriteString(text.S)
+			}
 		}
 	}
-
-	b, err := r.GetPlainText()
-	if err != nil {
-		return "", err
-	}
-	buf.ReadFrom(b)
+	// b, err := r.GetPlainText()
+	// if err != nil {
+	// 	return "", err
+	// }
+	// buf.ReadFrom(b)
 	return buf.String(), nil
 }
 
@@ -56,7 +60,7 @@ func ReadPdfTextWithFormatting(path string) (string, error) {
 		var lastTextStyle pdf.Text
 		texts := p.Content().Text
 		for _, text := range texts {
-			if IsSameSentence(text, lastTextStyle) {
+			if format.IsSameSentence(text, lastTextStyle) {
 				lastTextStyle.S = lastTextStyle.S + text.S
 			} else {
 				fmt.Print(lastTextStyle.S)
@@ -68,7 +72,6 @@ func ReadPdfTextWithFormatting(path string) (string, error) {
 	}
 	return buf.String(), nil
 }
-
 
 func ReadPdfRow(path string) (string, error) {
 	f, r, err := pdf.Open(path)
@@ -97,32 +100,3 @@ func ReadPdfRow(path string) (string, error) {
 	return "", nil
 }
 
-func IsSameSentence(text pdf.Text, lastTextStyle pdf.Text) bool {
-	return (text.Font == lastTextStyle.Font) && (text.FontSize == lastTextStyle.FontSize) && (text.X == lastTextStyle.X)
-}
-
-func FormatLines(filename string) {
-	input, err := ioutil.ReadFile(filename)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	lines := strings.Split(string(input), "\n")
-
-	for i, line := range lines {
-		if strings.Contains(line, `.`) {
-			lines[i] = strings.Replace(line, `.`, "", -1)
-		}
-	}
-	for i, line := range lines {
-		if strings.Contains(line, `(a)`) {
-			lines[i] = strings.Replace(line, `(a)`, "\n\n(a)", -1)
-		}
-
-		output := strings.Join(lines, "\n")
-		err = ioutil.WriteFile(filename, []byte(output), 0644)
-		if err != nil {
-			log.Fatalln(err)
-		}
-	}
-}
