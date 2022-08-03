@@ -25,7 +25,21 @@ func UpdateOutput(filename string) {
 			lines[i] = strings.Replace(line, `.`, "", -1)
 		}
 	}
-
+	for i, line := range lines {
+		if strings.Contains(line, `©`) {
+			lines[i] = strings.Replace(line, `©`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `UCLES`) {
+			lines[i] = strings.Replace(line, `UCLES 2016`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `20161`) {
+			lines[i] = strings.Replace(line, `20161`, "\n", -1)
+		}
+	}
 	output := strings.Join(lines, "\n")
 	err = ioutil.WriteFile(filename, []byte(output), 0644)
 	if err != nil {
