@@ -40,6 +40,77 @@ func UpdateOutput(filename string) {
 			lines[i] = strings.Replace(line, `20161`, "\n", -1)
 		}
 	}
+	for i, line := range lines {
+		if strings.Contains(line, `[Turn over`) {
+			lines[i] = strings.Replace(line, `[Turn over`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `20478/11/M/J/16`) {
+			lines[i] = strings.Replace(line, `20478/11/M/J/16`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `30478/11/M/J/16`) {
+			lines[i] = strings.Replace(line, `30478/11/M/J/16`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `30478/11/M/J/16`) {
+			lines[i] = strings.Replace(line, `30478/11/M/J/16`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `40478/11/M/J/16`) {
+			lines[i] = strings.Replace(line, `40478/11/M/J/16`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `50478/11/M/J/16`) {
+			lines[i] = strings.Replace(line, `50478/11/M/J/16`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `60478/11/M/J/16`) {
+			lines[i] = strings.Replace(line, `60478/11/M/J/16`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `70478/11/M/J/16`) {
+			lines[i] = strings.Replace(line, `70478/11/M/J/16`, "", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `[1]`) {
+			lines[i] = strings.Replace(line, `[1]`, "**[1]**\n\n", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `[2]`) {
+			lines[i] = strings.Replace(line, `[2]`, "**[2]**\n\n", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `[3]`) {
+			lines[i] = strings.Replace(line, `[3]`, "**[3]**\n\n", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `[4]`) {
+			lines[i] = strings.Replace(line, `[4]`, "**[4]**\n\n", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `[5]`) {
+			lines[i] = strings.Replace(line, `[5]`, "**[5]**\n\n", -1)
+		}
+	}
+	for i, line := range lines {
+		if strings.Contains(line, `[6]`) {
+			lines[i] = strings.Replace(line, `[6]`, "**[6]**\n\n", -1)
+		}
+	}
+
 	output := strings.Join(lines, "\n")
 	err = ioutil.WriteFile(filename, []byte(output), 0644)
 	if err != nil {
