@@ -15,5 +15,7 @@ func main() {
 
 	os.WriteFile("output.txt", []byte(content), 0644)
 
-	format.FormatLines("output.txt")
+	format.UpdateOutput("output.txt")
+
+	// format.FormatLines("output.txt")
 }
