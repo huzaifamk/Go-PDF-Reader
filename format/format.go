@@ -20,6 +20,18 @@ func UpdateOutput(filename string) {
 
 	lines := strings.Split(string(input), "\n")
 
+	for i, line := range lines {
+		if strings.Contains(line, "") {
+			lines[i] = strings.Replace(line, "", "", -1)
+		}
+	}
+
+	for i, line := range lines {
+		if strings.Contains(line, ":") {
+			lines[i] = strings.Replace(line, ":", ":\n", -1)
+		}
+	}
+
 	output := strings.Join(lines, "\n")
 	err = ioutil.WriteFile(filename, []byte(output), 0644)
 	if err != nil {
