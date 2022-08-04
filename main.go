@@ -18,5 +18,5 @@ func main() {
 
 	format.UpdateOutput("output.txt")
 
-	format.FormatLines("output.txt")
+	// format.FormatLines("output.txt") --> Only use for additional formatting
 }
