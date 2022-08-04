@@ -16,11 +16,11 @@ func ReadPlainText(path string) (string, error) {
 	}
 	defer f.Close()
 	var buf bytes.Buffer
-    b, err := r.GetPlainText()
-    if err != nil {
-        return "", err
-    }
-    buf.ReadFrom(b)
+	b, err := r.GetPlainText()
+	if err != nil {
+		return "", err
+	}
+	buf.ReadFrom(b)
 	return buf.String(), nil
 }
 
