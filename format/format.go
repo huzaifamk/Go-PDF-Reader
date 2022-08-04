@@ -25,7 +25,11 @@ func UpdateOutput(filename string) {
 			lines[i] = strings.Replace(line, "", "", -1)
 		}
 	}
-
+	for i, line := range lines {
+		if strings.Contains(line, "") {
+			lines[i] = strings.Replace(line, "", "", -1)
+		}
+	}
 	for i, line := range lines {
 		if strings.Contains(line, ":") {
 			lines[i] = strings.Replace(line, ":", ":\n", -1)
