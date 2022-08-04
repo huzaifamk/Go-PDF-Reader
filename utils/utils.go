@@ -9,6 +9,21 @@ import (
 	"github.com/ledongthuc/pdf"
 )
 
+func ReadPlainText(path string) (string, error) {
+	f, r, err := pdf.Open(path)
+	if err != nil {
+		return "", err
+	}
+	defer f.Close()
+	var buf bytes.Buffer
+	b, err := r.GetPlainText()
+	if err != nil {
+		return "", err
+	}
+	buf.ReadFrom(b)
+	return buf.String(), nil
+}
+
 func ReadPdfText(path string) (string, error) {
 
 	var buf bytes.Buffer
