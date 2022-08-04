@@ -148,12 +148,6 @@ func FormatLines(filename string) {
 		lines[7] = strings.Split(line, "\n")[0]
 	}
 
-	// for i := 1; i <= 8; i++ {
-	// 	for i, line := range lines {
-	// 		lines[i] = strings.Split(line, "\n")[0]
-	// 	}
-	// }
-
 	for i, line := range lines {
 		if strings.Contains(line, `.`) {
 			lines[i] = strings.Replace(line, `.`, "", -1)
